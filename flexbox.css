@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+
+    background-color: aquamarine;
+
+    /* justify = แกน X */
+    justify-content: center;
+
+    /* align = แกน Y */
+    align-items: center;
+
+
+
+    animation: cbg 1s infinite 0.4s;
+
+}
+
+/* animation */
+
+@keyframes cbg{
+    0%{
+        border: double;
+    }
+
+    65%{
+        border-radius: 10%;
+        
+    }
+
+    80%{
+        transform: rotate(1deg);
+    }
+
+    90%{
+        transform: rotate(-1deg);
+    }
+
+}
+
+/* Variable */
+:root{
+    --bgitem:deeppink
+}
+
+
+.item{
+    border: 10px solid black;
+    background-color: var(--bgitem);
+    width: 140px;
+    height: 120px;
+    border-radius: 15px;
+    text-align: center;
+    color: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+/* Pseudo Class */
+.item:first-child{
+    border: 5px solid white;
+    text-shadow: 2px 3px 5px black;
+}
+
+.item:nth-child(3){
+    background-color: blueviolet;
+}
+
+.item:nth-last-child(3){
+    border: dotted 5px greenyellow;
+}
+
+.item:last-child{
+    border: double 5px rgb(128, 22, 122);
+}
+
+.item:nth-child(2n+1){
+    color: black;
+}
+
+/* สำหรับ flex-wrap: nowrap */
+
+/* basis ยืด */
+.item2{
+    flex-basis: 200px;
+    align-self: start;
+    transform: skewY(-15deg);
+
+}
+
+/* shirnk หด */
+.item3{
+    flex-shrink: 2;
+    transform: translate(-10px,0px);
+}
+
+/* grow ขยาย */
+.item4{
+    flex-grow: 3;
+}
+
+/* flex:1  เท่ากัน */
+
+
+.item:hover{
+    transform: rotate(30deg);
+    cursor: pointer;
+    
+    
+}
+
+.item4:hover{
+    transform: skew(20deg,20deg);
+    
+}
+
+.item1:hover{
+    transform: scale(0.5);
+}
+
+#tra{
+    transition: all 0.3s ease-in-out;
+}
+
+#tra:hover{
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    
+}
+
